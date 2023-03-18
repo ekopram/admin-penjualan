@@ -15,6 +15,10 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
+Route::get('sidebar', function () {
+    return view('partials.sidebar');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,5 +42,6 @@ Route::get('kategori', function () {
 });
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
