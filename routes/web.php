@@ -39,3 +39,4 @@ Route::get('kategori', function () {
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
